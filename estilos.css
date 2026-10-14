@@ -1,40 +1,128 @@
-h2 {
-    color: blue;
+* {
+    box-sizing: border-box;
 }
 
-.libro {
-    background-color: #f2f2f2;
-    padding: 10px;
+body {
+    margin: 0;
+    padding: 48px 20px;
+    background-color: #f3f5f8;
+    color: #263238;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-
-body > header {
-    background-color: black;
-    color: white;
+.contenedor {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 32px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(20, 35, 50, 0.1);
 }
 
-.libro[data-genero="programacion"] {
-    border: 2px solid green;
+h1 {
+    margin: 0;
+    color: #202a35;
+    font-size: 2rem;
 }
 
-nav a {
-    color: red;
+/* Pseudoelemento: añade una línea decorativa bajo el título. */
+h1::after {
+    display: block;
+    width: 64px;
+    height: 4px;
+    margin-top: 12px;
+    background-color: #2e7d32;
+    border-radius: 2px;
+    content: "";
 }
 
-.info > p {
-    font-style: italic;
+.introduccion {
+    margin: 12px 0 28px;
+    color: #64717d;
 }
 
-.info h2 + p {
-    font-weight: bold;
+.tabla-contenedor {
+    overflow-x: auto;
 }
 
-.info h2 ~ p {
-    margin-left: 20px;
+table {
+    width: 100%;
+    min-width: 580px;
+    border-collapse: collapse;
+    text-align: left;
 }
 
-.libro.destacado {
-    background-color: #fff3b0;
-    border: 2px solid orange;
-    font-weight: bold;
+caption {
+    padding: 0 0 12px;
+    color: #52606b;
+    font-size: 0.95rem;
+    text-align: left;
+}
+
+/* Pseudoelemento: agrega un pequeño marcador antes del texto del caption. */
+caption::before {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    margin-right: 8px;
+    background-color: #2e7d32;
+    border-radius: 50%;
+    content: "";
+}
+
+th,
+td {
+    padding: 12px 14px;
+    border: 2px solid #ffffff;
+}
+
+thead {
+    background-color: #a51f3d;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #2470c7;
+    color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f0f3f6;
+    color: #34495e;
+}
+
+tbody tr {
+    transition: background-color 160ms ease, color 160ms ease;
+}
+
+/* Pseudoclase: cambia el aspecto de la fila cuando se pasa el ratón. */
+tbody tr:hover {
+    background-color: #164f91;
+    color: #ffffff;
+}
+
+tbody td:last-child {
+    font-weight: 700;
+}
+
+tfoot {
+    background-color: #a51f3d;
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    .contenedor {
+        padding: 22px 16px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
 }
